@@ -7,3 +7,5 @@
 
 ## 如何进入烧录模式（IAP模式）
 按住P36键，重新拔插USB即可，如果是Keil例程，单击P36键即可进入
+
+> Tools/WCHISPTool_Setup.exe 为WCH官方烧录工具
