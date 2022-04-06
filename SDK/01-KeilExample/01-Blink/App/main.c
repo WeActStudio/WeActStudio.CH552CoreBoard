@@ -31,16 +31,5 @@ void main()
 		}
 			
 		mDelaymS(1);
-		
-		if (IsEnableIAP() == 1)
-		{
-
-			EA = 0;
-			USB_INT_EN = 0x00;
-            USB_CTRL = bUC_RESET_SIE | bUC_CLR_ALL;
-            mDelaymS(100);
-
-			bootloader();
-		}
 	}
 }

@@ -80,13 +80,13 @@ endif
 # For now, get around this by stripping the paths off of the RELS list.
 
 $(TARGET).ihx: $(RELS)
-	$(CC) $(patsubst %,$(BUILDDIR)%,$(notdir $(RELS))) $(LFLAGS) -o $(TARGET).ihx
+	$(CC) $(patsubst %,$(BUILDDIR)%,$(notdir $(RELS))) $(LFLAGS) -o $(BUILD_DIR)/$(TARGET).ihx
 
 $(TARGET).hex: $(TARGET).ihx
-	$(PACK_HEX) $(TARGET).ihx > $(TARGET).hex
+	$(PACK_HEX) $(BUILD_DIR)/$(TARGET).ihx > $(TARGET).hex
 
 $(TARGET).bin: $(TARGET).ihx
-	$(OBJCOPY) -I ihex -O binary $(TARGET).ihx $(TARGET).bin
+	$(OBJCOPY) -I ihex -O binary $(BUILD_DIR)/$(TARGET).ihx $(TARGET).bin
 	
 flash: $(TARGET).bin pre-flash
 	$(WCHISP) $(TARGET).bin

@@ -13,28 +13,10 @@ void job0(void) _task_ 0
 	IAP_Init();
 
 	os_create_task(1); /* start task 1                         */
-	os_create_task(2); /* start task 2                         */
 	os_delete_task(0);
 }
 
 void job1(void) _task_ 1
-{
-	while (1)
-	{ /* endless loop                         */
-		if (IsEnableIAP() == 1)
-		{
-			EA = 0; //Close the total interrupt, must add
-            USB_INT_EN = 0x00;
-            USB_CTRL = bUC_RESET_SIE | bUC_CLR_ALL;
-			mDelaymS(100);
-
-			bootloader();
-		}
-		os_wait2(K_TMO, 5); /* wait for timeout: 5 ticks 50mS           */
-	}
-}
-
-void job2(void) _task_ 2
 {
 	bit pwmset = 0;
     

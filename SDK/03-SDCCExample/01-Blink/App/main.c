@@ -16,8 +16,12 @@ SBIT(LED, 0xB0, LED_PIN);
 
 void IAP_Init()
 {
-    P3_MOD_OC = P3_MOD_OC | (1 << ENABLE_IAP_PIN);
-    P3_DIR_PU = P3_DIR_PU | (1 << ENABLE_IAP_PIN);
+    USB_CTRL = 0x00;
+    USB_CTRL = bUC_RESET_SIE | bUC_CLR_ALL;
+    USB_CTRL &= ~bUC_RESET_SIE;
+    UDEV_CTRL &= ~bUD_PD_DIS;
+    P3_MOD_OC = P3_MOD_OC & ~ (1 << ENABLE_IAP_PIN);
+    P3_DIR_PU = P3_DIR_PU & ~ (1 << ENABLE_IAP_PIN);
 
     mDelaymS(10);
 
@@ -25,6 +29,7 @@ void IAP_Init()
     {
 
         EA = 0; //Close the total interrupt, must add
+		TMOD = 1;
         mDelaymS(100);
 
         bootloader();
@@ -35,7 +40,7 @@ void main()
 {
     CfgFsys();
 
-    mDelaymS(100);
+    mDelaymS(10);
 
     IAP_Init();
 
@@ -62,16 +67,6 @@ void main()
 		}
 
         time_MsTick_Delay(0); // 1ms
-
-        if (EnableIAP == 1)
-        {
-            USB_INT_EN = 0;
-            USB_CTRL = bUC_RESET_SIE | bUC_CLR_ALL | bUC_DMA_EN;
-            EA = 0; 
-
-            mDelaymS(100);
-            bootloader();
-        }
     }
 }
 

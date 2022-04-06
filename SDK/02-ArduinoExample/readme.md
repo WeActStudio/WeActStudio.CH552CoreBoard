@@ -1,7 +1,13 @@
 # Arduino development of routine
+CH55x Arduino from the author DeqingSun [ch55xduino](https://github.com/DeqingSun/ch55xduino)
 
+> Additional Boards Manager URLs
+```
+DeqingSun: https://raw.githubusercontent.com/DeqingSun/ch55xduino/ch55xduino/package_ch55xduino_mcs51_index.json
+WeActStudio: https://github.com/WeActTC/ch55xduino/releases/download/0.0.9-WeActStudio/package_ch55xduino_mcs51_index.json
+```
 ## Installation environment
-1. Open Arduino IDE,click `File`-> `Preferences`,`Additional Boards Manager URLs` enter `https://github.com/WeActTC/ch55xduino/releases/download/0.0.9-WeActStudio/package_ch55xduino_mcs51_index.json`
+1. Open Arduino IDE,click `File`-> `Preferences`,`Additional Boards Manager URLs` fill in the url above and choose one of them
 2. Click Tools->Board:...->Boards Manager
 3. Search `ch552`
 4. Find `CH55xDuino MCS51 plain C core (non-C++)`,click on Install

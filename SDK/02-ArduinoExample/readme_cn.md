@@ -1,7 +1,14 @@
 # Arduino 开发例程
+CH55x Arduino来自作者DeqingSun [ch55xduino](https://github.com/DeqingSun/ch55xduino)
+
+> 附加开发板管理器网址
+```
+DeqingSun: https://raw.githubusercontent.com/DeqingSun/ch55xduino/ch55xduino/package_ch55xduino_mcs51_index.json
+WeActStudio: https://raw.githubusercontent.com/WeActTC/ch55xduino/ch55xduino/package_ch55xduino_mcs51_index.json
+```
 
 ## 安装环境
-1. 打开Arduino IDE，点击`文件`-> `首选项`，在`附加开发板管理器网址`填入`https://github.com/WeActTC/ch55xduino/releases/download/0.0.9-WeActStudio/package_ch55xduino_mcs51_index.json`
+1. 打开Arduino IDE，点击`文件`-> `首选项`，在`附加开发板管理器网址`填入上面的网址，选择其中一个即可
 2. 点击`工具`->`开发板:xxx`->`开发板管理器`
 3. 搜索`ch552`
 4. 找到`CH55xDuino MCS51 plain C core (non-C++)`，点击安装

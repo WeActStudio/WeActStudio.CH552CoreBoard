@@ -6,4 +6,4 @@
 * 04-WCH_EVT -> Official development materials provided by WCH
 
 ## How to enter Burn Mode (IAP mode)
-Hold down the P36 button and reinsert the USB Cable. In the Keil routine, click the P36 button to enter
+Hold down the P36 button and reinsert the USB Cable. For Keil&SDCC Example, the way to enter the burn mode from App is to hold down the P36 key, click the RST key, and release the P36 key 0.5S later to enter the ISP mode

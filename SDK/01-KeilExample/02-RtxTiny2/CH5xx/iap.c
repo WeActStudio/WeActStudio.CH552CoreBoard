@@ -20,10 +20,11 @@ void IAP_Init(void)
     
     mDelaymS(10);
 
-    if((UDEV_CTRL&bUD_DP_PIN) == 1)
+    if(EnableIAP == 1)
     {
 
         EA = 0;
+        TMOD = 0;
         mDelaymS(100);
 
         bootloader();
