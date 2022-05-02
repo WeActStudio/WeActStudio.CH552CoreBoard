@@ -7,7 +7,7 @@ DeqingSun: https://raw.githubusercontent.com/DeqingSun/ch55xduino/ch55xduino/pac
 WeActStudio: https://raw.githubusercontent.com/WeActTC/ch55xduino/ch55xduino/package_ch55xduino_mcs51_index.json
 ```
 
-## 安装环境
+## 开发环境搭建
 1. 打开Arduino IDE，点击`文件`-> `首选项`，在`附加开发板管理器网址`填入上面的网址，选择其中一个即可
 2. 点击`工具`->`开发板:xxx`->`开发板管理器`
 3. 搜索`ch552`
@@ -16,12 +16,14 @@ WeActStudio: https://raw.githubusercontent.com/WeActTC/ch55xduino/ch55xduino/pac
 `http://duino.weact-tc.cn/ch55xduino/package_ch55xduino_mcs51_index.json`
 
 ## 烧录驱动程序安装方法
-> Arduino 支持免按键烧录，驱动程序需要使用libusb，不能使用WCH官方驱动
+> Arduino 支持免按键烧录，驱动程序可以使用libusb，也可以使用WCH官方驱动
 1. P36,P37管脚为烧录专用管脚，不可用于I/O
-2. 如果设备管理存在`USB Module`设备，需在设备管理器中卸载（同时勾选删除驱动程序）`USB Module`设备
-3. 打开Tools/bootloaderWebtool目录，双击`zadig.exe`，点击`Install WCID Driver`,等待驱动安装完成，即可
-4. 如果设备无法自动进入烧录模式，可以按住P36键，重新拔插USB即可
-5. 如果需要还原官方驱动程序，只需卸载libusb驱动，运行WCHISPTool目录的WCHISPDRV，重新安装驱动程序即可
+2. 下面是两种驱动的安装方法
+* 使用`WCH官方驱动`进行烧录，打开Tools/WCH_Bootloader_Driver/目录，双击`SETUP.EXE`，点击`安装`即可，安装完后设备管理器出现`USB Module`设备（位于`外部接口`下），驱动仅在Win10/Win11平台做了测试
+* 使用`libusb驱动`进行烧录，打开Tools/bootloaderWebtool目录，双击`zadig.exe`，点击`Install WCID Driver`,等待驱动安装完成，即可，
+如果设备管理存在`USB Module`设备，需在设备管理器中卸载（同时勾选删除驱动程序）`USB Module`设备，然后重新安装驱动
+3. 如果设备无法自动进入烧录模式，可以按住P36键，重新拔插USB即可
+4. 如果需要还原官方驱动程序，只需卸载libusb驱动，按步骤2操作即可
 
 ## 例程说明
 1. 01-Blink 为P30 LED闪烁

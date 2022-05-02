@@ -13,9 +13,14 @@ WeActStudio: https://github.com/WeActTC/ch55xduino/releases/download/0.0.9-WeAct
 4. Find `CH55xDuino MCS51 plain C core (non-C++)`,click on Install
 
 ## Burn driver installation method
-> Arduino supports button-free burning. Drivers need to use LibusB instead of official WCH drivers
 1. P36 and P37 pins are dedicated for firing and cannot be used for I/O
-2. If the `USB Module` device exists in device management, uninstall the `USB Module` device in device Manager (select delete driver)
-3. Open the Tools/bootloaderWebtool directory, double-click `zadig.exe`, and click `Install WCID Driver`. Wait until the Driver is installed
-4. If the device cannot enter the burning mode automatically, hold down the P36 key and reinsert the USB Cable
-5. To restore the official driver, uninstall the libusb driver, run WCHISPDRV in the WCHISPTool directory, and reinstall the driver
+2. The following describes how to install the two drivers
+* Use `WCH official driver` to burn, open Tools/WCH_Bootloader_Driver/ directory, double click `setup. EXE`, click `Install`, after installation, device manager appears` USB Module `device (located under` external interface `), The driver has only been tested for Windows 10/ 11
+* Use `libusb Driver` to burn, open Tools/bootloaderWebtool directory, double-click `zadig. Exe`, click `Install WCID Driver`, wait for the Driver installation is complete, ok,
+If the `USB Module` device exists in device management, uninstall the `USB Module` device in device Manager (check delete driver), and then reinstall the driver
+3. If the device cannot enter the burning mode automatically, hold down the P36 / C36 key and reinsert the USB flash drive
+4. To restore the official driver, uninstall the libusb driver and perform Step 2
+
+## Routine description
+1. 01-blink: P30 LED flashing
+2. 02-PWmFADING breathing for P30 LEDS
