@@ -1,7 +1,7 @@
 ; CH375WDM.INF
-; Driver for CH372/CH375/CH376/CH378 (USB chip) V2.9
-; WDM/DLL for Windows 98/Me/2000/XP/Vista/7/8/8.1/10/Server 2003/2008/2012/2016 -32/64bit
-; Copyright (C) WCH 2001-2021
+; Driver for CH372/CH375/CH376/CH378/CH569 (USB chip) V3.0
+; WDM/DLL for Windows 98/Me/2000/XP/Vista/7/8/8.1/10/Server 2003/2008/2012/2016/2019/2022 -32/64bit
+; Copyright (C) WCH 2001-2022
 ;
 
 [Version]
@@ -9,11 +9,11 @@ Signature = "$Chicago$"
 Class     = WCH
 ClassGuid = {77989ADF-06DB-4025-92E8-40D902C03B0A}
 Provider  = %WinChipHead%
-DriverVer = 11/09/2021, 2.9.2021.11
+DriverVer = 04/20/2022, 3.1.2022.04
 CatalogFile.NT = CH375WDM.CAT
 
 [ControlFlags]
-ExcludeFromSelect = USB\VID_4348&PID_5537, USB\VID_4348&PID_55E0, USB\VID_1A86&PID_5537, USB\VID_1A86&PID_5576, USB\VID_4348&PID_5538, USB\VID_1A86&PID_E035, USB\VID_1A86&PID_E036, USB\VID_1A86&PID_E037, USB\VID_1A86&PID_E038
+ExcludeFromSelect = USB\VID_4348&PID_5537, USB\VID_4348&PID_55E0, USB\VID_1A86&PID_5537, USB\VID_1A86&PID_5576, USB\VID_4348&PID_5538, USB\VID_1A86&PID_E035, USB\VID_1A86&PID_E036, USB\VID_1A86&PID_E037, USB\VID_1A86&PID_E038, USB\VID_1A86&PID_55DE
 
 [ClassInstall32]
 Addreg = WCHReg
@@ -39,6 +39,7 @@ HKR, , NoInstallClass, , 1
 %USB01.DeviceDesc% = CH375.Install, USB\VID_1A86&PID_E036
 %USB02.DeviceDesc% = CH375.Install, USB\VID_1A86&PID_E037
 %USB03.DeviceDesc% = CH375.Install, USB\VID_1A86&PID_E038
+%JTAG.DeviceDesc%  = CH375.Install, USB\VID_1A86&PID_55DE
 
 [WinChipHead.NT]
 %CH375.DeviceDesc% = CH375.Install, USB\VID_4348&PID_5537
@@ -50,28 +51,31 @@ HKR, , NoInstallClass, , 1
 %USB01.DeviceDesc% = CH375.Install, USB\VID_1A86&PID_E036
 %USB02.DeviceDesc% = CH375.Install, USB\VID_1A86&PID_E037
 %USB03.DeviceDesc% = CH375.Install, USB\VID_1A86&PID_E038
+%JTAG.DeviceDesc%  = CH375.Install, USB\VID_1A86&PID_55DE
 
 [WinChipHead.NTamd64]
 %CH375.DeviceDesc% = CH375.Install.NTamd64, USB\VID_4348&PID_5537
 %CH375.DeviceDesc% = CH375.Install.NTamd64, USB\VID_1A86&PID_5537
 %CH376.DeviceDesc% = CH375.Install.NTamd64, USB\VID_1A86&PID_5576
-%CH378.DeviceDesc% = CH375.Install, USB\VID_4348&PID_5538
+%CH378.DeviceDesc% = CH375.Install.NTamd64, USB\VID_4348&PID_5538
 %CH37XICP.DeviceDesc% = CH375.Install.NTamd64, USB\VID_4348&PID_55E0
-%USB00.DeviceDesc% = CH375.Install, USB\VID_1A86&PID_E035
-%USB01.DeviceDesc% = CH375.Install, USB\VID_1A86&PID_E036
-%USB02.DeviceDesc% = CH375.Install, USB\VID_1A86&PID_E037
-%USB03.DeviceDesc% = CH375.Install, USB\VID_1A86&PID_E038
+%USB00.DeviceDesc% = CH375.Install.NTamd64, USB\VID_1A86&PID_E035
+%USB01.DeviceDesc% = CH375.Install.NTamd64, USB\VID_1A86&PID_E036
+%USB02.DeviceDesc% = CH375.Install.NTamd64, USB\VID_1A86&PID_E037
+%USB03.DeviceDesc% = CH375.Install.NTamd64, USB\VID_1A86&PID_E038
+%JTAG.DeviceDesc%  = CH375.Install.NTamd64, USB\VID_1A86&PID_55DE
 
 [WinChipHead.NTia64]
 %CH375.DeviceDesc% = CH375.Install.NTia64, USB\VID_4348&PID_5537
 %CH375.DeviceDesc% = CH375.Install.NTia64, USB\VID_1A86&PID_5537
 %CH376.DeviceDesc% = CH375.Install.NTia64, USB\VID_1A86&PID_5576
-%CH378.DeviceDesc% = CH375.Install, USB\VID_4348&PID_5538
+%CH378.DeviceDesc% = CH375.Install.NTia64, USB\VID_4348&PID_5538
 %CH37XICP.DeviceDesc% = CH375.Install.NTia64, USB\VID_4348&PID_55E0
-%USB00.DeviceDesc% = CH375.Install, USB\VID_1A86&PID_E035
-%USB01.DeviceDesc% = CH375.Install, USB\VID_1A86&PID_E036
-%USB02.DeviceDesc% = CH375.Install, USB\VID_1A86&PID_E037
-%USB03.DeviceDesc% = CH375.Install, USB\VID_1A86&PID_E038
+%USB00.DeviceDesc% = CH375.Install.NTia64, USB\VID_1A86&PID_E035
+%USB01.DeviceDesc% = CH375.Install.NTia64, USB\VID_1A86&PID_E036
+%USB02.DeviceDesc% = CH375.Install.NTia64, USB\VID_1A86&PID_E037
+%USB03.DeviceDesc% = CH375.Install.NTia64, USB\VID_1A86&PID_E038
+%JTAG.DeviceDesc%  = CH375.Install.NTia64, USB\VID_1A86&PID_55DE
 
 [CH375.Install]
 CopyFiles = CH375.CopyFiles.SYS, CH375.CopyFiles.DLL
@@ -183,6 +187,7 @@ USB00.DeviceDesc = "USB Device0"
 USB01.DeviceDesc = "USB Device1"
 USB02.DeviceDesc = "USB Device2"
 USB03.DeviceDesc = "USB Device3"
+JTAG.DeviceDesc  = "USB2.0 To Jtag/SPI"
 DISK_NAME = "CH372/CH375 Installation Disk"
 
 [Strings.0804]
@@ -196,4 +201,5 @@ USB00.DeviceDesc = "USB Device0"
 USB01.DeviceDesc = "USB Device1"
 USB02.DeviceDesc = "USB Device2"
 USB03.DeviceDesc = "USB Device3"
+JTAG.DeviceDesc  = "USB2.0 To Jtag/SPI"
 DISK_NAME = "CH372/CH375 Installation Disk"
