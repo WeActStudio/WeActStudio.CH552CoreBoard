@@ -19,7 +19,7 @@ WeActStudio: https://raw.githubusercontent.com/WeActTC/ch55xduino/ch55xduino/pac
 > Arduino 支持免按键烧录，驱动程序可以使用libusb，也可以使用WCH官方驱动，推荐用WCH官方驱动。
 1. P36,P37管脚为烧录专用管脚，不可用于I/O
 2. 下面是两种驱动的安装方法
-* 使用`WCH官方驱动`进行烧录，打开Tools/WCH_Bootloader_Driver/目录，选择`SETUP.EXE`，右键`以管理员身份运行`，点击`安装`即可，安装完后，按住P36，在连接电脑后松开按键，设备管理器出现`USB Module`设备（位于`外部接口`或者`Interface`目录下）即说明驱动安装成功，驱动仅在Win10/Win11平台做了测试
+* 使用`WCH官方驱动`进行烧录，打开Tools/WCH_Bootloader_Driver/目录，选择`SETUP.EXE`，右键`以管理员身份运行`，点击`安装`即可，安装完后，按住P36，在连接电脑后松开按键，设备管理器出现`USB Module`设备（位于`外部接口`或者`Interface`目录下）即说明驱动安装成功，驱动仅在Win10/Win11平台做了测试，如驱动安装失败，可以试下安装该链接的驱动`https://www.wch.cn/downloads/CH372DRV_EXE.html`。
 * 使用`libusb驱动`进行烧录，打开Tools/bootloaderWebtool目录，双击`zadig.exe`，点击`Install WCID Driver`,等待驱动安装完成即可，如果设备管理存在`USB Module`设备，需在设备管理器中卸载（同时勾选删除驱动程序）`USB Module`设备，然后重新安装驱动
 3. 如果设备无法自动进入烧录模式，可以先任意选择一个可以打开的串口，按住P36键，重新拔插USB，点击下载按钮下载，之后选择核心板串口即可实现自动下载。
 4. 如果需要还原官方驱动程序，只需卸载libusb驱动，按步骤2操作即可
