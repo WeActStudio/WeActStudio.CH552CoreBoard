@@ -4,7 +4,7 @@ CH55x Arduino from the author DeqingSun [ch55xduino](https://github.com/DeqingSu
 > Additional Boards Manager URLs
 ```
 DeqingSun: https://raw.githubusercontent.com/DeqingSun/ch55xduino/ch55xduino/package_ch55xduino_mcs51_index.json
-WeActStudio: https://raw.githubusercontent.com/WeActTC/ch55xduino/ch55xduino/package_ch55xduino_mcs51_index.json
+WeActStudio: https://raw.githubusercontent.com/WeActStudio/ch55xduino/ch55xduino/package_ch55xduino_mcs51_index.json
 ```
 ## Installation environment
 1. Open Arduino IDE,click `File`-> `Preferences`,`Additional Boards Manager URLs` fill in the url above and choose one of them

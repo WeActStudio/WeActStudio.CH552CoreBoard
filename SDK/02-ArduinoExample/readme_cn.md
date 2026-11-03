@@ -4,7 +4,7 @@ CH55x Arduino来自作者DeqingSun [ch55xduino](https://github.com/DeqingSun/ch5
 > 附加开发板管理器网址
 ```
 DeqingSun: https://raw.githubusercontent.com/DeqingSun/ch55xduino/ch55xduino/package_ch55xduino_mcs51_index.json
-WeActStudio: https://raw.githubusercontent.com/WeActTC/ch55xduino/ch55xduino/package_ch55xduino_mcs51_index.json
+WeActStudio: https://raw.githubusercontent.com/WeActStudio/ch55xduino/ch55xduino/package_ch55xduino_mcs51_index.json
 ```
 
 ## 开发环境搭建
